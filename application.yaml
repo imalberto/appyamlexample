@@ -1,0 +1,22 @@
+-
+  settings: [ "master" ]
+  log:
+    server:
+        level: "debug"
+        defaultLevel: "debug"
+
+  specs:
+    pagemojit:
+      type: "PageMojit"
+
+    doc:
+      type: "HTMLFrameMojit"
+      config:
+        deploy: true
+        child:
+          base: "pagemojit"
+
+-
+  settings: [ "environment:development" ]
+  staticHandling:
+    forceUpdate: true

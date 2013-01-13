@@ -1,0 +1,21 @@
+{
+    "name": "appyamlexample",
+    "description": "TestApp to show simple YAML usage",
+    "version": "0.0.1",
+    "author": {
+        "name": "Your Name",
+        "email": "nobody@yahoo-inc.com"
+    },
+    "contributors": [
+          {
+              "name": "Your Name",
+              "email": "nobody@yahoo-inc.com"
+          }
+    ],
+    "dependencies": {
+        "mojito": "0.4.9-2"
+    },
+    "engines": {
+        "node": ">=0.6.x"
+    }
+}
