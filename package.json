@@ -13,7 +13,7 @@
           }
     ],
     "dependencies": {
-        "mojito": "0.4.9-2"
+        "mojito": ">= 0.5.8"
     },
     "engines": {
         "node": ">=0.6.x"

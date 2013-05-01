@@ -1,8 +1,5 @@
-/*
- * Copyright (c) 2012 Yahoo! Inc. All rights reserved.
- */
 
-YUI.add('PageMojitModelFoo-tests', function(Y, NAME) {
+YUI.add('PageModelFoo-tests', function(Y, NAME) {
     
     var suite = new YUITest.TestSuite(NAME),
         model = null,
@@ -10,18 +7,25 @@ YUI.add('PageMojitModelFoo-tests', function(Y, NAME) {
     
     suite.add(new YUITest.TestCase({
         
-        name: 'PageMojitModelFoo user tests',
+        name: 'PageModelFoo user tests',
         
         setUp: function() {
-            model = Y.mojito.models.PageMojitModelFoo;
+            model = Y.mojito.models.PageModelFoo;
         },
         tearDown: function() {
             model = null;
         },
         
         'test mojit model': function() {
-            var called = false;
+            var called = false,
+                cfg = { color: 'red' };
+
             A.isNotNull(model);
+
+            A.isFunction(model.init);
+            model.init(cfg);
+            A.areSame(cfg, model.config);
+
             A.isFunction(model.getData);
             model.getData(function(err, data) {
                 called = true;
@@ -36,4 +40,4 @@ YUI.add('PageMojitModelFoo-tests', function(Y, NAME) {
     
     YUITest.TestRunner.add(suite);
     
-}, '0.0.1', {requires: ['mojito-test', 'PageMojitModelFoo']});
+}, '0.0.1', {requires: ['mojito-test', 'PageModelFoo']});

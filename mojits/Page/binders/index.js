@@ -1,19 +1,16 @@
-/*
- * Copyright (c) 2012 Yahoo! Inc. All rights reserved.
- */
 /*jslint anon:true, sloppy:true, nomen:true*/
-YUI.add('PageMojitBinderIndex', function(Y, NAME) {
+YUI.add('PageBinderIndex', function(Y, NAME) {
 
 /**
- * The PageMojitBinderIndex module.
+ * The PageBinderIndex module.
  *
- * @module PageMojitBinderIndex
+ * @module PageBinderIndex
  */
 
     /**
-     * Constructor for the PageMojitBinderIndex class.
+     * Constructor for the PageBinderIndex class.
      *
-     * @class PageMojitBinderIndex
+     * @class PageBinderIndex
      * @constructor
      */
     Y.namespace('mojito.binders')[NAME] = {

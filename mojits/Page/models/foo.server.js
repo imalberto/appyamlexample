@@ -1,19 +1,17 @@
-/*
- * Copyright (c) 2012 Yahoo! Inc. All rights reserved.
- */
 /*jslint anon:true, sloppy:true, nomen:true*/
-YUI.add('PageMojitModelFoo', function(Y, NAME) {
+/*global YUI*/
+YUI.add('PageModelFoo', function (Y, NAME) {
 
 /**
- * The PageMojitModelFoo module.
+ * The PageModelFoo module.
  *
- * @module PageMojit
+ * @module Page
  */
 
     /**
-     * Constructor for the PageMojitModelFoo class.
+     * Constructor for the PageModelFoo class.
      *
-     * @class PageMojitModelFoo
+     * @class PageModelFoo
      * @constructor
      */
     Y.namespace('mojito.models')[NAME] = {

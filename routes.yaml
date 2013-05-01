@@ -1,18 +1,14 @@
 -
   settings: [ "master" ]
 
-  pagemojit1:
-    path: "/pagemojit1"
-    call: "@PageMojit.index"
-    params:
-        src: "routes.yaml"
-
-  pagemojit2:
-    path: "/pagemojit2"
-    call: "pagemojit.index"
-    params:
-        src: "routes.yaml"
-
-  default:
+  doc:
     path: "/"
     call: "doc.index"
+    params:
+      src: "HTMLFrameMojit"
+
+  page:
+    path: "/donotgothere"
+    call: "@Page.index"
+    params:
+      src: "routes.yaml"

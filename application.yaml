@@ -1,20 +1,34 @@
 -
   settings: [ "master" ]
-  log:
-    server:
-        level: "debug"
-        defaultLevel: "debug"
+
+  yui:
+    config:
+      debug: true
+      logLevel: "debug"
+
+  # use case 1: I want to have my middleware run first, and then Mojito's.
+  # use case 2: I want to have complete control over how middlewares are
+  #             configured.
+  # use case 3: I want to have my middleware run *after* Mojito's.
+  middleware:
+    - ./middleware/sniffer.js
+    - ./middleware/mojito-foo.js
+    - ./middleware/bar.js
 
   specs:
-    pagemojit:
-      type: "PageMojit"
-
     doc:
       type: "HTMLFrameMojit"
       config:
         deploy: true
+        assets:
+            top:
+                css:
+                    - http://yui.yahooapis.com/3.9.0/build/cssnormalize/cssnormalize-min.css
+
         child:
-          base: "pagemojit"
+          type: "Page"
+          config:
+            foo: "bar"
 
 -
   settings: [ "environment:development" ]
