@@ -1,15 +1,17 @@
 
 /*jslint node:true*/
 
+var debug = require('debug')('middleware:mojito-foo');
+
 function Foo() {
-    console.log('[mojito-foo] middleware init OK');
+    debug('middleware init OK');
 }
 
 Foo.prototype.handle = function (logger, store) {
 
     return function (req, res, next) {
         if (req.url) {
-            console.log('[mojito-foo] req.url = ' + req.url);
+            debug('req.url = ' + req.url);
         }
         next();
     };
@@ -17,5 +19,5 @@ Foo.prototype.handle = function (logger, store) {
 
 module.exports = function (config) {
     var foo = new Foo();
-    return foo.handle(config.logger, config.store);
+    return foo.handle();
 };
