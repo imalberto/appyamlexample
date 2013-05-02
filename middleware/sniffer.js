@@ -1,21 +1,26 @@
 
 /*jslint node:true*/
 
-function Sniffer() {
-    console.log('[sniffer] middleware init OK');
+var debug = require('debug')('middleware:sniffer');
+
+function Sniffer(config) {
+    this.config = config || {};
+    debug('middleware init OK');
 }
 
-Sniffer.prototype.handle = function (logger, store) {
+Sniffer.prototype.handle = function () {
 
     return function (req, res, next) {
         if (req.url) {
-            console.log('[sniffer] req.url = ' + req.url);
+            debug('req.url = ' + req.url);
         }
         next();
     };
 };
 
 module.exports = function (config) {
-    var sniffer = new Sniffer();
-    return sniffer.handle(config.logger, config.store);
+    var sniffer;
+    
+    sniffer = new Sniffer(config);
+    return sniffer.handle();
 };

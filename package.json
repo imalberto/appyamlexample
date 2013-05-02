@@ -13,9 +13,11 @@
           }
     ],
     "dependencies": {
+        "debug": "*",
+        "express": "3.x",
         "mojito": ">= 0.5.8"
     },
     "engines": {
-        "node": ">=0.6.x"
+        "node": ">=0.8.x"
     }
 }

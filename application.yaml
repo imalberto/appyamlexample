@@ -10,10 +10,10 @@
   # use case 2: I want to have complete control over how middlewares are
   #             configured.
   # use case 3: I want to have my middleware run *after* Mojito's.
-  middleware:
-    - ./middleware/sniffer.js
-    - ./middleware/mojito-foo.js
-    - ./middleware/bar.js
+  #middleware:
+  #  - ./middleware/sniffer.js
+  #  - ./middleware/mojito-foo.js
+  #  - ./middleware/bar.js
 
   specs:
     doc:
