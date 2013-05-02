@@ -8,16 +8,18 @@ process.chdir(__dirname);
 /**
 This is an example of a mojito app using the `express` way.
 
+A few things to note:
+
+- use `debug` as default logger
+
 **/
 
 var debug = require('debug')('app:yaml'),
-    path = require('path'),
     express = require('express'),
-    mojito = require('./node_modules/mojito/lib/mojito'),
     appProto = express.application,
     defaultConfiguration = appProto.defaultConfiguration,
+    mojito = require('./node_modules/mojito/lib/mojito'),
     app;
-
 
 /**
 The ideal use case is as follows:
@@ -25,7 +27,6 @@ The ideal use case is as follows:
 // initialize mojito and attach to `app`
 app = express();
 // at this point, `app.mojito` exist
-
 
 // middlewares could return all the middleware in the order needed
 // OR
@@ -40,20 +41,25 @@ app.use(require('./middleware/foo.js'));
 
 **/
 
+appProto.foo = 'bar';
+
 // TODO: move this to lib/mojito.js
 // Cannot seem to be able to get defaultConfiguration() to be invoked by 
 // `express()` when defined in lib/mojito.js.
+/*
 appProto.defaultConfiguration = function () {
     defaultConfiguration.apply(this, arguments);
 
     // `this` refers to the `app` instance
     mojito(this);
-};
 
+    // app.set('port', app.mojito.options.port);
+    this.set('port', this.mojito.options.port);
+};
+*/
+// Before calling express, need to setup defaultConfiguration so that it is
+// called !!!
 app = express();
-// console.log(app.mojito.options);
-// app.set('port', app.mojito.options.port);
-app.set('port', 8666);
 
 
 // TODO:
@@ -65,7 +71,6 @@ app.set('port', 8666);
 // app.use(mojito.middlewares());
 app.use(require('./middleware/sniffer')({ logger: debug }));
 app.use(require('./middleware/mojito-foo')({ logger: debug }));
-// console.log(mojito);
 
 
 // In addition to mojito app, user can hook up additional mounting points if

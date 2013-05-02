@@ -1,6 +1,9 @@
 -
   settings: [ "master" ]
 
+  # Tell mojito to listen on custom port
+  # appPort: 8888
+
   yui:
     config:
       debug: true
