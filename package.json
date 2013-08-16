@@ -14,8 +14,7 @@
     ],
     "dependencies": {
         "debug": "*",
-        "express": "3.x",
-        "mojito": ">= 0.5.8"
+        "express": "3.x"
     },
     "engines": {
         "node": ">=0.8.x"

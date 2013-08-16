@@ -18,7 +18,7 @@ var debug = require('debug')('app:yaml'),
     express = require('express'),
     appProto = express.application,
     defaultConfiguration = appProto.defaultConfiguration,
-    mojito = require('./node_modules/mojito/lib/mojito'),
+    mojito = require('../../lib/mojito'),
     app;
 
 /**
