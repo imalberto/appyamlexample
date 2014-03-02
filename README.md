@@ -1,4 +1,10 @@
 
+
+CHANGELOG:
+
+2014-01-28 - This project appears to be outdated
+
+
 Test project to show how to configure with YAML.
 
 Valid URLs:
